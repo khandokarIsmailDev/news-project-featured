@@ -12,8 +12,8 @@ export async function POST(req,res){
             return NextResponse.json({status:"failed",data:result})
         }else{
             let token = await CreateToken(result['email'],result['id'])
-            let expirDuration = new Date(Date.now()+24*60*60*1000) //1day mili second
-            const cokieString = `token=${token};expire:${expirDuration.toUTCString()};path=/`
+            let expireDuration = new Date(Date.now()+24*60*60*1000) //1day mili second
+            const cokieString = `token=${token};expires=${expireDuration.toUTCString()};path=/` //ai line kono mistake kora jabe na, token= ;; expires= ;; dite hobe
 
             return NextResponse.json({status:"success",data:token},{status:200,headers:{'Set-Cookie':cokieString}})
         }
