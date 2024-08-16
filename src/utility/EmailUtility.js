@@ -16,7 +16,7 @@ export async function SendEmail(EmailTo,EmailText,EmailSubject){
     })
 
     let MailOption = {
-        from:'Next Js News Portal <info@teamrabbil.com',
+        from:'Next Js News Portal <info@teamrabbil.com>',
         to:EmailTo,
         subject:EmailSubject,
         text:EmailText
