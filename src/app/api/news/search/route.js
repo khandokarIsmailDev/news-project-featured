@@ -10,7 +10,7 @@ export async function GET(req){
             where:{title:{contains:keywords}}
         })
 
-        return NextResponse.json({status:"success",data:''})
+        return NextResponse.json({status:"success",data:result})
     }catch(err){
         return NextResponse.json({status:"fail",data:err})
     }
